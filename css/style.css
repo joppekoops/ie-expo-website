@@ -1,3 +1,65 @@
 * {
 	box-sizing: border-box;
 }
+
+:root {
+	--primary-color: #FEF122;
+	--darker-primary-color: #FEB322;
+	--secondary-color: #5A41A8;
+	--lighter-secondary-color: #6E73C1;
+	--dark-color: #0A0A0A;
+	--light-color: #FFFFFF;
+}
+
+body {
+	background-color: var(--dark-color);
+	color: var(--light-color);
+	font-family: sans-serif;
+	margin: 0;
+
+	display: grid;
+	grid-template-columns: [margin-start] 8em [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [content-end] 8em [margin-end];
+}
+
+header {
+	grid-column: margin;
+	background-color: var(--primary-color);
+	color: var(--dark-color);
+	display: grid;
+	grid-template-columns: subgrid;
+	align-items: center;
+}
+
+header img {
+	grid-column: first-column;
+	grid-row: 1;
+
+}
+
+header nav {
+	grid-column: second-column;
+	grid-row: 1;
+	justify-self: end;
+
+	ul {
+		list-style: none;
+		display: flex;
+		gap: 1em;
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		color: var(--dark-color);
+		padding-block: 1em;
+		display: block;
+	}
+}
+
+h1 {
+	background-image: radial-gradient(circle at 50% 0%, var(--primary-color), var(--darker-primary-color));
+	width: min-content;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-size: 6em;
+}
