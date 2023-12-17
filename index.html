@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header>
-		<img src="./img/ielogo.png" alt="Immersive environments logo" />
+		<span class="logo"><img src="./img/immersive-environments_logo.webp" alt="Immersive environments logo" /> Immersive Environments</span>
 		<nav>
 			<ul>
 				<li><a href="#">projects</a></li>
@@ -17,10 +17,39 @@
 		</nav>
 	</header>
 	<main>
-		<h1>Immersive Expo</h1>
-		<p>Save the date: <time datetime="2024-01-19T16:00:00">January 19th, 2024 16:00 till 20:00</time> at the <a href="#location">NDSM Treehouse</a></p>
-		<a href="#">Get tickets</a>
+
+		<section class="info">
+			<h1>Immersive Expo</h1>
+			<p class="large">Save the date: <time datetime="2024-01-19T16:00:00">January 19th, 2024 16:00 till 20:00</time> at the <a href="#location">NDSM Treehouse</a></p>
+			<a href="#" class="button">Get tickets</a>
+			<section class="sponsor-logos">
+				<h2 class="sr-only">Sponsors</h2>
+				<img src="./img/infinia:marisonia_logo.png" alt="Marisonia, a product by infinia">
+				<img src="./img/cinekid_logo.svg" alt="Cinekid">
+				<img src="./img/mood_logo.png" alt="Mood">
+				<img src="./img/commonplace_logo.svg" alt="Commonplace">
+				<img src="./img/digital-life_logo.svg" alt="professorship digital life Amsterdam University of Applied Sciences">
+			</section>
+		</section>
+		<img src="./img/banner.webp" alt="" class="illustration">
+
+		<div class="banner-background">
+			<div>
+				<div></div>
+			</div>
+		</div>
+
 	</main>
+
+	<!-- SVG clip paths -->
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 609 1000" fill="none">
+		<defs>
+			<clipPath id="shape" clipPathUnits="objectBoundingBox">
+				<path d="M0.18,0.191 L1,0 V1 L0.163,0.632 C0.132,0.619,0.107,0.6,0.091,0.579 L0.021,0.482 C-0.002,0.451,-0.005,0.415,0.012,0.382 L0.082,0.254 C0.097,0.225,0.133,0.202,0.18,0.191"/>
+			</clipPath>
+		</defs>
+	</svg>
+
 	<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
