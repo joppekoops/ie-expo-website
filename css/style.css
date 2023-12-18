@@ -283,6 +283,7 @@ li:before {
 	height: 1em;
 	aspect-ratio: 1/1;
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 img {
@@ -321,6 +322,7 @@ img {
 
 iframe {
 	border-radius: .5em;
+	border: none;
 }
 
 address, time {
