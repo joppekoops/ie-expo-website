@@ -22,6 +22,10 @@
   width: 1px;
 }
 
+html, body {
+	overflow-x: hidden;
+}
+
 body {
 	background-color: var(--dark-color);
 	color: var(--light-color);
@@ -30,9 +34,10 @@ body {
 
 	display: grid;
 	grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [content-end] 10vw [margin-end];
-	column-gap: .5em;
-	row-gap: 1em;
-	overflow-x: hidden;
+	
+/*	tot nu toe niet nodig*/
+	/*column-gap: .5em;
+	row-gap: 1em;*/
 }
 
 header {
@@ -46,19 +51,21 @@ header {
 }
 
 .logo {
-	grid-column: first-column;
+	grid-column: content;
 	grid-row: 1;
 	display: flex;
+	gap: 1ch;
 	align-items: center;
 	padding-block: 1em;
 	font-family: Roboto, sans-serif;
 }
 
 .logo img {
-	height: 3rem;
+	height: 2rem;
 }
 
 header nav {
+	display: none;
 	grid-column: second-column;
 	grid-row: 1;
 	justify-self: end;
@@ -73,8 +80,22 @@ header nav {
 
 	& a {
 		color: var(--dark-color);
-		padding-block: 1em;
+		padding: .5em;
 		display: block;
+		font-weight: bold;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus {
+			text-decoration: underline;
+		}
+
+		&:active {
+			opacity: .6;
+		}
 	}
 }
 
@@ -85,7 +106,7 @@ main {
 }
 
 section.info {
-	grid-column: first-column;
+	grid-column: content;
 	container-type: inline-size;
 }
 
@@ -93,7 +114,8 @@ section.sponsor-logos {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 12%;
-	min-width: 25em;
+	
+	margin-block: 1em 4em;
 
 	& img {
 		&[src*="infinia"] {
@@ -146,20 +168,20 @@ div.banner-background {
 	background-color: #5A41A832;
 	padding-block: 4em;
 	position: absolute;
+	height: 110%;
 	z-index: -1;
-	rotate: -12deg;
+	transform: skewY(-12deg);
 	transform-origin: top right;
-	left: -50vw;
 	filter: blur(2px);
 
 	& div {
 		position: static;
 		background-color: #5A41A832;
 		padding-block: 2em;
+		height: 100%;
 
 		& div {
-			height: 40rem;
-			width: 200vw;
+			width: 100vw;
 		}
 	}
 }
@@ -176,7 +198,7 @@ h1 {
 p {
 
 	&.large {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 
 	& a {
@@ -190,7 +212,7 @@ img {
 
 a.button {
 	background-image: radial-gradient(circle at 50% 0%, var(--primary-color), var(--darker-primary-color));
-	font-size: 1.5em;
+	font-size: 1.25em;
 	margin-block: 2rem 4rem;
 	padding: 1rem 3rem;
 	border-radius: 1em;
@@ -216,4 +238,36 @@ svg {
 	position: fixed;
 	width: 0;
 	height: 0;
+}
+
+@media only screen and (width > 580px) {
+	.logo {
+		grid-column: first-column;
+	}
+
+	header nav {
+		display: block;
+	}
+
+	section.info {
+		grid-column: first-column;
+	}
+
+	section.sponsor-logos {
+		min-width: 25em;
+	}
+}
+
+@media only screen and (width > 830px) {
+	p {
+
+		&.large {
+		font-size: 1.5rem;
+		}
+	}
+
+	a.button {
+		font-size: 1.5em;
+	}
+
 }
