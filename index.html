@@ -23,8 +23,31 @@
 
 		<section class="info">
 			<h1>Immersive Expo</h1>
-			<p class="large">Save the date: <time datetime="2024-01-19T16:00:00">January 19th, 2024 16:00 till 20:00</time> at the <a href="#location">NDSM Treehouse</a></p>
-			<a href="#" class="button">Get tickets</a>
+			<p class="large">Save the date: <time datetime="2024-01-19T16:00:00">January 19th, 2024<br> 16:00 till 20:00</time> at the <a href="#location">NDSM Treehouse</a></p>
+			
+
+			<!-- Noscript content voor toegevoegde SEO -->
+			<noscript><a href="https://www.eventbrite.com/e/immersive-expo-tickets-779323466467" rel="noopener noreferrer" target="_blank">Tickets kopen op Eventbrite</a></noscript>
+			<!-- Je kunt deze knop naar wens aanpassen -->
+			<button id="eventbrite-widget-modal-trigger-779323466467" type="button" class="button">Tickets kopen</button>
+
+			<script src="https://www.eventbrite.nl/static/widgets/eb_widgets.js"></script>
+
+			<script type="text/javascript">
+			    var exampleCallback = function() {
+			        console.log('Order voltooid.');
+			    };
+
+			    window.EBWidgets.createWidget({
+			        widgetType: 'checkout',
+			        eventId: '779323466467',
+			        modal: true,
+			        modalTriggerElementId: 'eventbrite-widget-modal-trigger-779323466467',
+			        onOrderComplete: exampleCallback
+			    });
+			</script>
+
+
 			<section class="sponsor-logos">
 				<h2 class="sr-only">Sponsors</h2>
 				<img src="./img/infinia:marisonia_logo.png" alt="Marisonia, a product by infinia">
