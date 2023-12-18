@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:Europe/Amsterdam
+TZURL:https://www.tzurl.org/zoneinfo-outlook/Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20231218T201440Z
+UID:1702930287513-13047@ical.marudot.com
+DTSTART;TZID=Europe/Berlin:20240119T160000
+DTEND;TZID=Europe/Berlin:20240119T200000
+SUMMARY:Immersive Expo
+URL:https://expo.ispace.amsterdam/
+DESCRIPTION:Visit our Expo at NDSM Treehouse to immerse yourself in a world of\ndigital-physical spaces.\n\n Students of the Minor Immersive Environments at the Amsterdam\nUniversity of Applied Sciences will present the immersive\ninstallations they designed and produced for project partners like Cinekid\, Digital Life\, Infinia\, Marisonia\, Mood and Common Place as well as some self initiated personal projects.\n\nBe prepared to be immersed by projection\, sound\, objects\, scents\,\nsensors\, and interactive walls. Hope to see you there!
+LOCATION:Treehouse NDSM\, T.T. Neveritaweg 55-57\, 1033 WB Amsterdam\, Nederland
+END:VEVENT
+END:VCALENDAR
