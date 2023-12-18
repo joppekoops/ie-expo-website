@@ -115,7 +115,7 @@ section.sponsor-logos {
 	grid-template-columns: repeat(6, 1fr);
 	gap: 12%;
 	
-	margin-block: 1em 4em;
+	margin-block: 1em 7em;
 
 	& img {
 		&[src*="infinia"] {
@@ -141,28 +141,13 @@ section.sponsor-logos {
 
 img.illustration {
 	clip-path: url("#shape");
-	aspect-ratio: 3/5;
 	object-fit: cover;
-	width: 40vw;
-	position: absolute;
-	right: 0;
-	align-self: center;
-	max-width: initial;
 }
 
-/*Werkt niet*/
-
-/*.illustration:before {
-	content: '';
-	background: red;
-	position: absolute;
-	display: block;
-	width: 1em;
-	height: 1em;
-	top: 50%;
-	left: 50%;
-	z-index: 99999;
-}*/
+div.illustration-background {
+	clip-path: url("#shape2");
+	background-image: radial-gradient(circle at 50% 0%, var(--primary-color), var(--darker-primary-color));
+}
 
 div.banner-background {
 	background-color: #5A41A832;
@@ -191,14 +176,14 @@ h1 {
 	width: min-content;
 	-webkit-background-clip: text;
 	color: transparent;
-	font-size: clamp(3.5rem, 7vw + 1em, 6rem);
+	font-size: clamp(3rem, 7vw + 1em, 6rem);
 	margin-block: 1.25em 1.25rem;
 }
 
 p {
 
 	&.large {
-		font-size: 1.25rem;
+		font-size: 1rem;
 	}
 
 	& a {
@@ -212,9 +197,9 @@ img {
 
 a.button {
 	background-image: radial-gradient(circle at 50% 0%, var(--primary-color), var(--darker-primary-color));
-	font-size: 1.25em;
-	margin-block: 2rem 4rem;
-	padding: 1rem 3rem;
+	font-size: 1em;
+	margin-block: 2em 3em;
+	padding: .8em 2em;
 	border-radius: 1em;
 	font-weight: bold;
 	text-decoration: none;
@@ -255,6 +240,37 @@ svg {
 
 	section.sponsor-logos {
 		min-width: 25em;
+	}
+
+	img.illustration, div.illustration-background {
+		position: absolute;
+		right: 0;
+		align-self: center;
+	}
+
+	img.illustration {
+		clip-path: url("#shape");
+		width: 40vw;
+		max-width: initial;
+		aspect-ratio: 3/5;
+	}
+
+	div.illustration-background {
+		clip-path: url("#shape2");
+		width: 43vw;
+		aspect-ratio: 4/7;
+		margin-top: 5%;
+	}
+
+	p {
+
+		&.large {
+		font-size: 1.25rem;
+		}
+	}
+
+	a.button {
+		font-size: 1.25em;
 	}
 }
 
