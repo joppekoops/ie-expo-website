@@ -1,6 +1,5 @@
 * {
 	box-sizing: border-box;
-/*	outline: 1px solid red;*/
 }
 
 :root {
@@ -68,8 +67,6 @@ body {
 
 	display: grid;
 	grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [third-column-start] 1fr [third-column-end] 0 [fourth-column-start] 1fr [fourth-column-end] 0 [content-end] 10vw [margin-end];
-	
-/*	row-gap: 1em;*/
 }
 
 header {
