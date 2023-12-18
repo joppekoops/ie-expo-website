@@ -12,77 +12,78 @@
 }
 
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap; 
-  width: 1px;
+	position: absolute;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 1px;
 }
 
 @font-face {
-  font-family: "American Captain";
-  src:
-    local("American Captain"),
-    url("../fonts/american-captain.woff") format("woff");
+	font-family: "American Captain";
+	src:
+		local("American Captain"),
+		url("../fonts/american-captain.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Lato";
-  font-weight: normal;
-  font-style: normal;
-  src:
-    local("American Captain"),
-    url("../fonts/lato-regular.woff") format("woff");
+	font-family: "Lato";
+	font-weight: normal;
+	font-style: normal;
+	src:
+		local("American Captain"),
+		url("../fonts/lato-regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Lato";
-  font-weight: normal;
-  font-style: italic;
-  src:
-    local("American Captain"),
-    url("../fonts/lato-italic.woff") format("woff");
+	font-family: "Lato";
+	font-weight: normal;
+	font-style: italic;
+	src:
+		local("American Captain"),
+		url("../fonts/lato-italic.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Lato";
-  font-weight: bold;
-  font-style: normal;
-  src:
-    local("American Captain"),
-    url("../fonts/lato-bold.woff") format("woff");
+	font-family: "Lato";
+	font-weight: bold;
+	font-style: normal;
+	src:
+		local("American Captain"),
+		url("../fonts/lato-bold.woff") format("woff");
 }
 
-html, body {
+html,
+body {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
 body {
+
+	display: grid;
 	background-color: var(--dark-color);
 	color: var(--light-color);
 	font-family: "Lato", sans-serif;
 	margin: 0;
-
-	display: grid;
 	grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [third-column-start] 1fr [third-column-end] 0 [fourth-column-start] 1fr [fourth-column-end] 0 [content-end] 10vw [margin-end];
 }
 
 header {
+	display: grid;
 	grid-column: margin;
 	color: var(--dark-color);
-	display: grid;
 	grid-template-columns: subgrid;
 	align-items: center;
 	z-index: 99;
 }
 
 .logo {
+	display: flex;
 	grid-column: content;
 	grid-row: 1;
-	display: flex;
 	gap: 1ch;
 	align-items: center;
 	padding-block: 1em;
@@ -106,17 +107,17 @@ header nav {
 	justify-self: end;
 
 	& ul {
-		list-style: none;
 		display: flex;
+		list-style: none;
 		gap: 1em;
 		margin: 0;
 		padding: 0;
 	}
 
 	& a {
+		display: block;
 		color: var(--dark-color);
 		padding: .5em;
-		display: block;
 		font-weight: bold;
 		text-decoration: none;
 
@@ -135,8 +136,8 @@ header nav {
 }
 
 main {
-	grid-column: margin;
 	display: grid;
+	grid-column: margin;
 	grid-template-columns: subgrid;
 }
 
@@ -157,24 +158,28 @@ section.sponsor-logos {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 12%;
-	
+
 	margin-block: 1em 6em;
 
 	& img {
 		&[src*="infinia"] {
 			grid-column: span 3;
 		}
+
 		&[src*="cinekid"] {
 			grid-row: 2/4;
 			grid-column: span 2;
 		}
+
 		&[src*="commonplace"] {
 			grid-column: span 3;
 			grid-row: 2;
 		}
+
 		&[src*="mood"] {
 			grid-row: 3;
 		}
+
 		&[src*="digital-life"] {
 			grid-row: 3;
 			grid-column: span 3;
@@ -182,10 +187,11 @@ section.sponsor-logos {
 	}
 }
 
-img.illustration, div.illustration-background {
-		position: absolute;
-		right: 0;
-		align-self: center;
+img.illustration,
+div.illustration-background {
+	position: absolute;
+	right: 0;
+	align-self: center;
 }
 
 img.illustration {
@@ -206,9 +212,9 @@ div.illustration-background {
 }
 
 div.banner-background {
+	position: absolute;
 	background-color: #5A41A832;
 	padding-block: 4em;
-	position: absolute;
 	height: 110%;
 	z-index: -1;
 	transform: skewY(-12deg);
@@ -275,8 +281,8 @@ li {
 }
 
 li:before {
-	content: '';
 	display: block;
+	content: '';
 	background-image: url("../img/immersive-environments_cube.webp");
 	height: 1em;
 	aspect-ratio: 1/1;
@@ -291,6 +297,7 @@ img {
 }
 
 .button {
+	display: inline-block;
 	background-image: radial-gradient(circle at 50% 0%, var(--primary-color), var(--darker-primary-color));
 	font-size: 1em;
 	padding: .75em 1em;
@@ -298,7 +305,6 @@ img {
 	font-weight: bold;
 	text-decoration: none;
 	color: var(--dark-color);
-	display: inline-block;
 	border: none;
 	cursor: pointer;
 	box-shadow: 0 .25rem .25rem #00000040;
@@ -306,9 +312,7 @@ img {
 	width: max-content;
 	height: fit-content;
 
-	&:focus {
-
-	}
+	&:focus {}
 
 	&:hover {
 		filter: brightness(1.1);
@@ -325,19 +329,21 @@ iframe {
 	border: none;
 }
 
-address, time {
+address,
+time {
 	line-height: 1.6;
 }
 
 section.about {
-	grid-column: content;
+	position: relative;
 	display: grid;
+	grid-column: content;
 	row-gap: 1em;
 	align-items: center;
 	margin-top: min(15vw, 15rem);
-	position: relative;
 
-	& img, & div {
+	& img,
+	& div {
 		grid-row: 5;
 		grid-column: 1;
 	}
@@ -359,8 +365,8 @@ section.about {
 }
 
 section.more-info {
-	grid-column: content;
 	display: grid;
+	grid-column: content;
 	row-gap: 1em;
 	margin-top: min(15vw, 15rem);
 	margin-bottom: 5rem;
@@ -371,7 +377,8 @@ section.more-info {
 		grid-row: 2;
 	}
 
-	& address, & time {
+	& address,
+	& time {
 		display: block;
 		margin-block: 1em;
 	}
@@ -438,14 +445,15 @@ svg {
 	p {
 
 		&.large {
-		font-size: 1.25rem;
+			font-size: 1.25rem;
 		}
 	}
 
 	section.more-info {
 		grid-template-columns: subgrid;
 
-		& h2, & iframe {
+		& h2,
+		& iframe {
 			grid-column: first-column/fourth-column;
 		}
 
@@ -471,7 +479,7 @@ svg {
 	p {
 
 		&.large {
-		font-size: 1.5rem;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -484,13 +492,14 @@ svg {
 			grid-column: third-column/fourth-column;
 		}
 
-		& img, & div {
+		& img,
+		& div {
 			grid-row: 1/6;
 			grid-column: first-column/second-column;
 		}
 
 		& img {
-			
+
 			clip-path: url("#shape3");
 			aspect-ratio: 3/4;
 		}
