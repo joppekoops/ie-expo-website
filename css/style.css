@@ -57,6 +57,7 @@
 
 html, body {
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -285,6 +286,8 @@ li:before {
 
 img {
 	max-width: 100%;
+	width: auto;
+	height: auto;
 }
 
 .button {
@@ -475,7 +478,6 @@ svg {
 	section.about {
 		display: grid;
 		grid-template-columns: subgrid;
-		column-gap: 2em;
 		row-gap: 1em;
 
 		& *:not(img, div) {
