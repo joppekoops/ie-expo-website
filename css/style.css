@@ -29,6 +29,33 @@
     url("../fonts/american-captain.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Lato";
+  font-weight: normal;
+  font-style: normal;
+  src:
+    local("American Captain"),
+    url("../fonts/lato-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-weight: normal;
+  font-style: italic;
+  src:
+    local("American Captain"),
+    url("../fonts/lato-italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Lato";
+  font-weight: bold;
+  font-style: normal;
+  src:
+    local("American Captain"),
+    url("../fonts/lato-bold.woff") format("woff");
+}
+
 html, body {
 	overflow-x: hidden;
 }
@@ -36,15 +63,13 @@ html, body {
 body {
 	background-color: var(--dark-color);
 	color: var(--light-color);
-	font-family: sans-serif;
+	font-family: "Lato", sans-serif;
 	margin: 0;
 
 	display: grid;
-	grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [content-end] 10vw [margin-end];
+	grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [third-column-start] 1fr [third-column-end] 0 [fourth-column-start] 1fr [fourth-column-end] 0 [content-end] 10vw [margin-end];
 	
-/*	tot nu toe niet nodig*/
-	/*column-gap: .5em;
-	row-gap: 1em;*/
+/*	row-gap: 1em;*/
 }
 
 header {
@@ -78,7 +103,7 @@ header {
 
 header nav {
 	display: none;
-	grid-column: second-column;
+	grid-column: third-column/fourth-column;
 	grid-row: 1;
 	justify-self: end;
 
@@ -122,7 +147,7 @@ section.info {
 	container-type: inline-size;
 
 	& p {
-		width: 50%;
+		width: 60%;
 	}
 }
 
@@ -131,7 +156,7 @@ section.sponsor-logos {
 	grid-template-columns: repeat(6, 1fr);
 	gap: 12%;
 	
-	margin-block: 1em 7em;
+	margin-block: 1em 6em;
 
 	& img {
 		&[src*="infinia"] {
@@ -213,10 +238,13 @@ h1 {
 
 h2 {
 	font-family: "American Captain", sans-serif;
-	font-size: 1.25rem;
+	font-size: 1.5rem;
+	margin: 0;
 }
 
 p {
+	margin: 0;
+	line-height: 1.6;
 
 	&.large {
 		font-size: 1rem;
@@ -225,6 +253,27 @@ p {
 	& a {
 		color: inherit;
 	}
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 1em;
+	margin: 0;
+}
+
+li {
+	display: flex;
+	gap: 1em;
+	margin-block: .6em;
+}
+
+li:before {
+	content: '';
+	display: block;
+	background-image: url("../img/immersive-environments_cube.webp");
+	height: 1em;
+	aspect-ratio: 1/1;
+	background-size: contain;
 }
 
 img {
@@ -263,7 +312,30 @@ img {
 section.about {
 	grid-column: content;
 	display: grid;
-	grid-template-columns: subgrid;
+	row-gap: 1em;
+	align-items: center;
+	margin-top: min(15vw, 15rem);
+	position: relative;
+
+	& img, & div {
+		grid-row: 5;
+		grid-column: 1;
+	}
+
+	& img {
+		clip-path: url("#shape4");
+		aspect-ratio: 5/6;
+		object-fit: cover;
+		width: 80%;
+		margin-left: 8%;
+	}
+
+	& div {
+		background-image: radial-gradient(circle at 50% 0%, var(--primary-color), var(--darker-primary-color));
+		aspect-ratio: 3/4;
+		clip-path: url("#shape6");
+		width: 85%;
+	}
 }
 
 svg {
@@ -279,7 +351,7 @@ svg {
 	}
 
 	.logo {
-		grid-column: first-column;
+		grid-column: first-column/second-column;
 		justify-content: start;
 		filter: none;
 
@@ -289,11 +361,11 @@ svg {
 	}
 
 	header nav {
-		display: block;
+		display: none;
 	}
 
 	section.info {
-		grid-column: first-column;
+		grid-column: first-column/second-column;
 
 		& p {
 			width: 100%;
@@ -312,6 +384,11 @@ svg {
 	div.illustration-background {
 		width: 43vw;
 		top: 12%;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		margin: 0;
 	}
 
 	p {
@@ -337,6 +414,33 @@ svg {
 
 	.button {
 		font-size: 1.5em;
+	}
+
+	section.about {
+		display: grid;
+		grid-template-columns: subgrid;
+		column-gap: 2em;
+		row-gap: 1em;
+
+		& *:not(img, div) {
+			grid-column: third-column/fourth-column;
+		}
+
+		& img, & div {
+			grid-row: 1/6;
+			grid-column: first-column/second-column;
+		}
+
+		& img {
+			
+			clip-path: url("#shape3");
+			aspect-ratio: 3/4;
+		}
+
+		& div {
+			aspect-ratio: 3/4;
+			clip-path: url("#shape5");
+		}
 	}
 
 }
