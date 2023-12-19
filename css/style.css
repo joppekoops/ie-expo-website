@@ -430,7 +430,7 @@ svg {
 	section.info {
 		grid-column: first-column/second-column;
 
-		& p {
+		& p:first-of-type {
 			width: 100%;
 		}
 
