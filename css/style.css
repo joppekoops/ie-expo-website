@@ -145,12 +145,16 @@ section.info {
 	grid-column: content;
 	container-type: inline-size;
 
-	& p {
+	& p:first-of-type {
 		width: 50%;
 	}
 
 	& .button {
-		margin-block: 2em 3em;
+		margin-block: 2em .5em;
+	}
+
+	& p:last-of-type {
+		margin-bottom: 3em;
 	}
 }
 
@@ -268,6 +272,11 @@ p {
 	}
 }
 
+small {
+	font-size: 1rem;
+	line-height: 1rem;
+}
+
 ul {
 	list-style-type: none;
 	padding-left: 1em;
@@ -380,7 +389,11 @@ section.more-info {
 	& address,
 	& time {
 		display: block;
-		margin-block: 1em;
+		margin-top: 1em;
+	}
+
+	& .button {
+		margin-top: 1em;
 	}
 }
 
@@ -425,6 +438,10 @@ svg {
 			font-size: 1.25em;
 			padding: .75em 2em;
 		}
+
+		& p:last-of-type {
+			margin-bottom: 5em;
+		}
 	}
 
 	section.sponsor-logos {
@@ -451,6 +468,10 @@ svg {
 		&.large {
 			font-size: 1.25rem;
 		}
+	}
+
+	small {
+		font-size: 1rem;
 	}
 
 	section.more-info {
