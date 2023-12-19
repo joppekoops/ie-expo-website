@@ -68,7 +68,7 @@ body {
 	color: var(--light-color);
 	font-family: "Lato", sans-serif;
 	margin: 0;
-	grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [third-column-start] 1fr [third-column-end] 0 [fourth-column-start] 1fr [fourth-column-end] 0 [content-end] 10vw [margin-end];
+	grid-template-columns: [margin-start] 5vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [third-column-start] 1fr [third-column-end] 0 [fourth-column-start] 1fr [fourth-column-end] 0 [content-end] 5vw [margin-end];
 }
 
 header {
@@ -146,7 +146,7 @@ section.info {
 	container-type: inline-size;
 
 	& p {
-		width: 60%;
+		width: 50%;
 	}
 
 	& .button {
@@ -391,6 +391,10 @@ svg {
 }
 
 @media only screen and (width > 580px) {
+
+	body {
+		grid-template-columns: [margin-start] 10vw [content-start] 0 [first-column-start] 1fr [first-column-end] 0 [second-column-start] 1fr [second-column-end] 0 [third-column-start] 1fr [third-column-end] 0 [fourth-column-start] 1fr [fourth-column-end] 0 [content-end] 10vw [margin-end];
+	}
 
 	header {
 		background-color: var(--primary-color);
