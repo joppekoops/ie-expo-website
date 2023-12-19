@@ -242,7 +242,7 @@ h1 {
 	width: min-content;
 	-webkit-background-clip: text;
 	color: transparent;
-	font-size: clamp(2.5rem, 7vw + 1em, 6rem);
+	font-size: clamp(3.5rem, 7vw + 1em, 6rem);
 	margin-block: 1.25em 1.25rem;
 	font-family: "American Captain", sans-serif;
 	letter-spacing: .075em;
@@ -264,7 +264,7 @@ p {
 	line-height: 1.6;
 
 	&.large {
-		font-size: 1rem;
+		font-size: 1.1rem;
 	}
 
 	& a {
