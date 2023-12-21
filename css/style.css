@@ -227,9 +227,10 @@ div.banner-background div {
 	background-color: #5A41A832;
 	padding-block: 2em;
 	height: 100%;
-	div {
-		width: 100vw;
-	}
+}
+
+div.banner-background div div {
+	width: 100vw;
 }
 
 h1 {
