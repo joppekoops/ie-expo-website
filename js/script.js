@@ -34,6 +34,63 @@ else {
 
 let ticketButton = document.getElementById('not-working-button')
 
-ticketButton.onclick = () => {
-    window.alert('We detected that you are on the Safari browser. Sadly our payment system does not work here :( Please try to use another browser.')
+if(ticketButton) {
+    ticketButton.onclick = () => {
+        window.alert('We detected that you are on the Safari browser. Sadly our payment system does not work here :( Please try to use another browser.')
+    }
 }
+
+const slider = document.querySelector('.slider')
+const slides = document.querySelectorAll('article.project')
+const prevButton = document.querySelector('.projects-prev-button')
+const nextButton = document.querySelector('.projects-next-button')
+let currentSlide = 0
+
+for (let i = 0; i < slides.length; i++) {
+    slides[i].style.transform = 'translateX(' + i * 92 + 'vw)'
+}
+
+let goToSlide = (nextSlide) => {
+
+    slider.style.transform = 'translateX(' + nextSlide * -92 +'vw)'
+
+    let nextTitle
+    let prevTitle
+
+    if (nextSlide == 0) {
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'flex';
+
+        nextTitle = slides[nextSlide].nextElementSibling.querySelector('h3').innerText
+    }
+
+    else if (nextSlide == slides.length - 1) {
+        prevButton.style.display = 'flex';
+        nextButton.style.display = 'none';
+
+        prevTitle = slides[nextSlide].previousElementSibling.querySelector('h3').innerText
+    }
+
+    else {
+        prevButton.style.display = 'flex';
+        nextButton.style.display = 'flex';
+
+        prevTitle = slides[nextSlide].previousElementSibling.querySelector('h3').innerText
+        nextTitle = slides[nextSlide].nextElementSibling.querySelector('h3').innerText
+    }
+
+    prevButton.innerText = prevTitle
+    nextButton.innerText = nextTitle
+
+    currentSlide = nextSlide
+}
+
+prevButton.onclick = () => {
+    goToSlide(currentSlide-1)
+}
+nextButton.onclick = () => {
+    goToSlide(currentSlide+1)
+}
+
+goToSlide(0)
+
