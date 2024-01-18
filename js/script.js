@@ -47,12 +47,12 @@ const nextButton = document.querySelector('.projects-next-button')
 let currentSlide = 0
 
 for (let i = 0; i < slides.length; i++) {
-    slides[i].style.transform = 'translateX(' + i * 92 + 'vw)'
+    slides[i].style.transform = 'translateX(calc(' + i * 88 + 'vw + ' + i * 1.5 + 'rem))'
 }
 
 let goToSlide = (nextSlide) => {
 
-    slider.style.transform = 'translateX(' + nextSlide * -92 +'vw)'
+    slider.style.transform = 'translateX(calc(' + nextSlide * -88 + 'vw + ' + nextSlide * -1.5 + 'rem))'
 
     let nextTitle
     let prevTitle
@@ -79,8 +79,8 @@ let goToSlide = (nextSlide) => {
         nextTitle = slides[nextSlide].nextElementSibling.querySelector('h3').innerText
     }
 
-    prevButton.innerText = prevTitle
-    nextButton.innerText = nextTitle
+    prevButton.firstElementChild.innerText = prevTitle
+    nextButton.firstElementChild.innerText = nextTitle
 
     currentSlide = nextSlide
 }
