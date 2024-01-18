@@ -600,13 +600,13 @@ svg {
 		background-color: var(--primary-color);
 	}
 
-	.logo {
+	header .logo {
 		grid-column: first-column/second-column;
 		justify-content: start;
 		filter: none;
 	}
 
-	.logo span {
+	header .logo span {
 		display: inline;
 	}
 
