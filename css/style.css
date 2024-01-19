@@ -325,6 +325,9 @@ picture {
 	transition: .2s;
 	width: max-content;
 	height: fit-content;
+	display: flex;
+	gap: 1ch;
+	align-items: center;
 }
 
 .button:hover {
@@ -334,6 +337,16 @@ picture {
 .button:active {
 	filter: brightness(.9);
 	box-shadow: 0 .25rem .25rem #00000040, inset 0 .25rem .25rem #00000040;
+}
+
+.button[href*="pdf"]:after {
+	content: '\f1c1';
+	font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+	font-family: 'Font Awesome 6 Free';
+	font-weight: 900;
 }
 
 button {
@@ -395,8 +408,8 @@ section.projects button {
 	top: 0;
 	z-index: 3;
 	gap: 1rem;
-	display: flex;
 	align-items: center;
+	display: flex;
 	font-family: "American Captain", sans-serif;
 	color: white;
 	border: none;
@@ -561,11 +574,22 @@ picture.logo img {
 	object-fit: contain;
 }
 
+section.map {
+	margin-top: min(10vw, 15rem);
+	grid-column: content;
+	display: grid;
+	gap: 1rem;
+}
+
+section.map img {
+	border-radius: 1rem;
+}
+
 section.more-info {
 	display: grid;
 	grid-column: content;
 	row-gap: 1em;
-	margin-top: min(15vw, 15rem);
+	margin-top: min(20vw, 10rem);
 	margin-bottom: 5rem;
 }
 
