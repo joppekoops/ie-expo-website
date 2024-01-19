@@ -398,7 +398,7 @@ section.projects {
 	position: relative;
 	display: grid;
 	grid-column: content;
-	row-gap: 1em;
+	row-gap: 5em;
 	margin-top: min(30vw, 15rem);
 	margin-bottom: min(1vw, 5rem);
 }
@@ -464,8 +464,9 @@ article.project {
 	grid-template-columns: 1fr;
 	grid-column-gap: 2rem;
 	grid-row-gap: 1rem;
-	position: absolute;
+	position: relative;
 	margin-top: calc(3rem + 5vw);
+	margin-bottom: calc(3rem + 5vw);
 	width: 100%;
 	transform-origin: 50% -400rem;
 	padding: 2rem;
@@ -548,13 +549,6 @@ article.project h4 {
 	font-family: "American Captain", sans-serif;
 }
 
-article.project p {
-	display: -webkit-box;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
 article.project div picture {
 	height: 4rem;
 	display: block;
@@ -575,7 +569,7 @@ picture.logo img {
 }
 
 section.map {
-	margin-top: min(10vw, 15rem);
+	margin-top: min(15vw, 15rem);
 	grid-column: content;
 	display: grid;
 	gap: 1rem;
@@ -586,7 +580,7 @@ section.map img {
 }
 
 section.schedule {
-	margin-top: min(10vw, 15rem);
+	margin-top: min(15vw, 15rem);
 	grid-column: content;
 	display: grid;
 	gap: 1rem;
@@ -776,13 +770,6 @@ svg {
 		grid-column: 1;
 		grid-row: 1;
 		padding-block: 3rem;
-	}
-
-	article.project p {
-		display: -webkit-box;
-	    -webkit-line-clamp: 5;
-	    -webkit-box-orient: vertical;
-	    overflow: hidden;
 	}
 
 	article.project:after {
